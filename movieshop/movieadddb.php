@@ -1,6 +1,6 @@
 <?php
     require_once('conn.php');
-   $sql = "UPDATE product SET name = '".$_POST['name']."', descrition = '".$_POST['detail']."', price = '".$_POST['price']."' WHERE product_id = '".$_POST['pid']."'";
+    $sql = "INSERT INTO product (product_id, name, descrition, price) VALUES ('".$_POST['pid']."', '".$_POST['name']."', '".$_POST['detail']."', '".$_POST['price']."')";
 
     if($conn->query($sql)){
         echo "<script>alert('Record updated successfully');</script>";

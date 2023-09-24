@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Sarabun:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+*{
+    font-family: 'Sarabun', sans-serif;
+}
+
+.bg-mix-dark{
+    background-color: #141414 !important;
+    color: #fff !important;
+}
+
+.bg-mix-dark-1{
+    background-color: #0F0F0F !important;
+    color: #fff !important;
+}
+
+.table>:not(caption)>*>*{
+    background-color: initial !important; /* หมายถึง ไม่มีการกำหนดค่า */
+    color: #fff !important;
+}
+
+a{
+    text-decoration: none !important;
+}

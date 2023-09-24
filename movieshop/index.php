@@ -8,16 +8,19 @@
     }
 ?>
 
-<body>
+<body class="bg-mix-dark">
     <?php
         require_once 'navbar.php';
     ?>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-12 p-5 bg-body-secondary">
-                <h2>สมาชิก</h2>
+            <div class="col-12 p-md-5 d-flex align-items-center justify-content-between">
+                <h2 class="fw-bold">สมาชิก</h2>
+                <div>
+                    <a href="addbio.php" class="btn btn-success">เพิ่มสมาชิก</a>
+                </div>
             </div>
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-5 p-md-5">
             <table class="table">
             <thead>
                 <tr>
