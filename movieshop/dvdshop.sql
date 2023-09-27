@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2023 at 10:53 AM
+-- Generation Time: Sep 27, 2023 at 04:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `actors` (
 --
 
 INSERT INTO `actors` (`actorid`, `name`, `lastname`, `pic_actor`, `birthdate`) VALUES
-(101, 'มัตซึคาเซะ', ' มาซายะ', '', '0000-00-00');
+(101, 'มัตซึคาเซะ', ' มาซายะ', '', '0000-00-00'),
+(103, 'โซมะ', 'ไซโต้', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -88,6 +89,7 @@ CREATE TABLE `member_rent` (
 --
 
 CREATE TABLE `movie_actors` (
+  `id` int(11) NOT NULL,
   `movie_id` int(11) NOT NULL,
   `actor_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -96,8 +98,10 @@ CREATE TABLE `movie_actors` (
 -- Dumping data for table `movie_actors`
 --
 
-INSERT INTO `movie_actors` (`movie_id`, `actor_id`) VALUES
-(101, 101);
+INSERT INTO `movie_actors` (`id`, `movie_id`, `actor_id`) VALUES
+(0, 101, 101),
+(2, 101, 103),
+(1, 102, 101);
 
 -- --------------------------------------------------------
 
@@ -120,7 +124,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `name`, `price`, `descrition`, `duration`, `release_date`, `pic_movie`) VALUES
-(101, 'กริดแมน ยูนิเวิร์ส', 179, 'กลับมาเพื่อปิดจบและไขปมทุกอย่างให้กระจ่างใส การมาบรรจบกันของสองโลกที่มีไคจูเหมือนกันสุดท้ายแล้วจะเป็นยังไง ไคจูหรือมนุษย์จะเป็นฝ', 118, '2023-09-18', 'thumb_3912.jpg');
+(101, 'กริดแมน ยูนิเวิร์ส', 179, 'กลับมาเพื่อปิดจบและไขปมทุกอย่างให้กระจ่างใส การมาบรรจบกันของสองโลกที่มีไคจูเหมือนกันสุดท้ายแล้วจะเป็นยังไง ไคจูหรือมนุษย์จะเป็นฝ', 118, '2023-09-18', 'thumb_3912.jpg'),
+(102, 'A', 0, '123', 0, '0000-00-00', '');
 
 --
 -- Indexes for dumped tables
@@ -148,6 +153,7 @@ ALTER TABLE `member_rent`
 -- Indexes for table `movie_actors`
 --
 ALTER TABLE `movie_actors`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `movie_id` (`movie_id`,`actor_id`),
   ADD KEY `ma_actorid_fk` (`actor_id`);
 

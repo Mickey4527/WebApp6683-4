@@ -6,6 +6,26 @@
     if(!$result){
         die("Error : ". $conn->$conn_error);
     }
+
+    function getMovieActor($conn,$movie_id){
+        $sql = "SELECT * FROM actors actor JOIN movie_actors movie_act ON actor.actorid = movie_act.actor_id WHERE movie_id = ".$movie_id;
+        $result = $conn->query($sql);
+
+        return $result;
+    }
+
+    function loopActor($conn,$movie_id){
+        $result = getMovieActor($conn,$movie_id);
+        $output = null;
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $output .= "<span class='badge bg-mix-dark-1'>".$row["name"]." ".$row["lastname"]."</span>";
+            }
+        }else {
+            $output = "0 results";
+        }
+        return $output;
+    }
 ?>
     <body class="bg-mix-dark">
         <?php
@@ -27,8 +47,9 @@
                                     $output .= "<div class='card-body'>";
                                     $output .= "<h5 class='card-title fw-bold'>".$row["name"]."</h5>";
                                     $output .= "<p class='small card-text'>".$row["descrition"]."</p>";
+                                     $output .= '<small class="pe-3">นักแสดง</small>'.loopActor($conn,$row["product_id"]);
                                     $output .= "<div class='d-flex flex-column'>";
-                                    $output .= "<a href='rent.php?pid=".$row["product_id"]."' class='btn btn-primary mb-2'>เช่า ".$row["price"]." บาท</a>";
+                                    $output .= "<a href='rent.php?pid=".$row["product_id"]."' class='btn btn-primary mb-2 mt-3'>เช่า ".$row["price"]." บาท</a>";
                                     $output .= "<a href='movieedit.php?pid=".$row["product_id"]."' class='btn btn-light'>แก้ไขหนัง</a>";
                                     $output .= "</div>";
                                     $output .= "</div>";

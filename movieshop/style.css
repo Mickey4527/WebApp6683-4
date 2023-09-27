@@ -13,7 +13,11 @@
     background-color: #0F0F0F !important;
     color: #fff !important;
 }
-
+.card:hover{
+    background-color: #141414 !important;
+    transition: 0.3s;
+    transform:translateY(-5px);
+}
 .table>:not(caption)>*>*{
     background-color: initial !important; /* หมายถึง ไม่มีการกำหนดค่า */
     color: #fff !important;

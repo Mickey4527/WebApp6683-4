@@ -18,7 +18,7 @@
                     <p>
 
                         <label for="pid">รหัส</label>
-                        <input class="form-control" type="text" name="pid" id="pid" value="<?=$row['product_id']+1;?>" disabled readonly>
+                        <input class="form-control" type="text" name="pid" id="pid">
                         
 
                     </p>
