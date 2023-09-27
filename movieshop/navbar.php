@@ -12,9 +12,6 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="index.php">สมาชิก</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#">Pricing</a>
-        </li>
 
       </ul>
     </div>

@@ -27,7 +27,7 @@
         return $output;
     }
 ?>
-    <body class="bg-mix-dark">
+    <body class="bg-mix-blue">
         <?php
             require_once 'navbar.php';
         ?>
@@ -49,7 +49,7 @@
                                     $output .= "<p class='small card-text'>".$row["descrition"]."</p>";
                                      $output .= '<small class="pe-3">นักแสดง</small>'.loopActor($conn,$row["product_id"]);
                                     $output .= "<div class='d-flex flex-column'>";
-                                    $output .= "<a href='rent.php?pid=".$row["product_id"]."' class='btn btn-primary mb-2 mt-3'>เช่า ".$row["price"]." บาท</a>";
+                                    $output .= "<a href='rent.php?mid=".$row["product_id"]."' class='btn btn-primary mb-2 mt-3'>เช่า ".$row["price"]." บาท</a>";
                                     $output .= "<a href='movieedit.php?pid=".$row["product_id"]."' class='btn btn-light'>แก้ไขหนัง</a>";
                                     $output .= "</div>";
                                     $output .= "</div>";
@@ -73,3 +73,4 @@
                     </div>
             </div>
         </div>
+    </body>

@@ -8,11 +8,11 @@
     }
 ?>
 
-<body class="bg-mix-dark">
+<body class="bg-mix-blue">
     <?php
         require_once 'navbar.php';
     ?>
-    <div class="container mt-5">
+    <div class="container mt-5 bg-mix-dark">
         <div class="row">
             <div class="col-12 p-md-5 d-flex align-items-center justify-content-between">
                 <h2 class="fw-bold">สมาชิก</h2>
